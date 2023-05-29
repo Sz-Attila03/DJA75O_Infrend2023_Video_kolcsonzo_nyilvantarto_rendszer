@@ -1,0 +1,40 @@
+<div class="row div-align">
+    <h4> <b> Szerkeztés </b> </h4>
+</div>
+
+<div class="row justify-content-md-center mb-5">
+    <div class="col-6">
+        <h4> <p style="text-align: center;"> <b> DVD </b> </p> </h4>
+        <form [formGroup]="szerkeztesForm">
+            <div class="mb-3">
+                <label for="title" clsss="form-lable"> Cím </label>
+                <input type="text" class="form-control" id="title" name="title" formControlName="title">
+            </div>
+            <div class="mb-3">
+                <label for="date" clsss="form-lable"> Beszerzés dátuma </label>
+                <input type="text" class="form-control" id="date" name="date" formControlName="date">
+            </div>
+
+            <div class="mb-3">
+                <label for="status" clsss="form-lable"> Státusz </label>
+                <input type="text" class="form-control" id="status" name="status" formControlName="status">
+            </div>
+
+            <!--
+            <div class="mb-3">
+                <label for="status" clsss="form-lable"> Státusz </label>
+                <select class="form-select" name="status" id="status" formControlName="status" [compareWith]="osszehasonlito" >
+                    <option *ngFor="let allapot of alapots" [ngValue]="{ id: allapot.id }"> {{ allapot.name }} </option>
+                </select>
+            </div>
+            -->
+            <div class="md-3">
+                <label for="imgUrl" clsss="form-lable"> Kép Url-je </label>
+                <input type="text" class="form-control" id="imgUrl" name="date" formControlName="imgUrl">
+            </div>
+            <div class="text-end md-5">
+                <button class="btn btn-outline-primary" (click)="updateMovie()" > Mentés </button>
+            </div>
+        </form>
+    </div>
+</div>

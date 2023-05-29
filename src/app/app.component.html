@@ -1,0 +1,64 @@
+<div class="container" style="background-color: #808080;">
+
+  <div class="row" style="background-color: #808080;">
+    <div class="col-2 div-align">
+      <img src="../assets/imagies/film.png" width="90%"  class="img-thumbnail" />
+    </div>
+    <div class="col-9 w-50 p-3">
+      <p class="h1"> <strong> Videó kölcsönző </strong> </p>
+    </div>
+    <!--
+    <div class="col-1">
+      Szerep köröd: {{role}}
+    </div>
+    -->
+  </div>
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark mx-auto">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav">
+        <li class="nav-item active">
+          <a class="nav-link" routerLink="/"> Kezdőlap </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/dvd" routerLinkActive="kivalasztott"> DVD </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/kazetak" routerLinkActive="kivalasztott"> Kazeták </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/termekform" routerLinkActive="kivalasztott" > Új termék felvétele </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/felhasznalok" routerLinkActive="kivalasztott" *ngIf="hit.isLoggedIn() && hit.isAdmin()"> Felhasználók </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/felhasznalokeres" routerLinkActive="kivalasztott" > Felhasználó keresése </a>
+        </li>
+      </ul>
+    </div>
+    <div>
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/bejelentkezes" routerLinkActive="kivalasztott" *ngIf="!hit.isLoggedIn()">Bejelentkezés</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/regisztracio" routerLinkActive="kivalasztott" *ngIf="!hit.isLoggedIn()">Regisztráció</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="" (click)="kijelentkezes()"  *ngIf="hit.isLoggedIn()">Kijelentjezés</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="row mx-auto">
+    <div class="col-12">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+
+</div>

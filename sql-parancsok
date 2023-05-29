@@ -1,0 +1,113 @@
+status: 1 szabad - 2 kikülcsönzött - 3 selejtezett
+
+CREATE TABLE `dvd` (
+  `id` int(11) NOT NULL,
+  `title` text NOT NULL COLLATE utf8_hungarian_ci,
+  `date` text NOT NULL,
+  `status` text NOT NULL COLLATE utf8_hungarian_ci,
+  `imgUrl` varchar(255) COLLATE utf8_hungarian_ci DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_hungarian_ci;
+
+CREATE TABLE `kazetak` (
+  `id` int(11) NOT NULL,
+  `title` text NOT NULL COLLATE utf8_hungarian_ci,
+  `date` text NOT NULL,
+  `status` text NOT NULL COLLATE utf8_hungarian_ci,
+  `imgUrl` varchar(255) COLLATE utf8_hungarian_ci DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_hungarian_ci;
+
+CREATE TABLE `user`(
+  `id` int(11) NOT NULL,
+  `firstname`text NOT NULL COLLATE utf8_hungarian_ci,
+  `lastname`text NOT NULL COLLATE utf8_hungarian_ci,
+  `username`text NOT NULL COLLATE utf8_hungarian_ci,
+  `email` text NOT NULL COLLATE utf8_hungarian_ci,
+  `passwd` text COLLATE utf8_hungarian_ci,
+  `telszam` text COLLATE utf8_hungarian_ci,
+  `szemszam` text COLLATE utf8_hungarian_ci,
+  `lakcim` text COLLATE utf8_hungarian_ci,
+  `role` text COLLATE utf8_hungarian_ci,
+  `status` int(szabad) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_hungarian_ci;
+
+CREATE TABLE `allapot` (
+   `id` int(1) NOT NULL,
+   `status` text COLLATE utf8_hungarian_ci
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_hungarian_ci;
+
+CREATE TABLE `kolcsonzottdvd` (
+  `id` int(11) NOT NULL,
+  `dvdid` int(11) NOT NULL,
+  `userid` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_hungarian_ci;
+
+CREATE TABLE `kolcsonzottkazeta` (
+  `id` int(11) NOT NULL,
+  `kazetaid` int(11) NOT NULL,
+  `userid` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_hungarian_ci;
+
+CREATE TABLE `kolcdonzottkazetak` () ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_hungarian_ci;
+
+dvd:
+INSERT INTO `dvd` (`id`,`title`,`date`,`status`,`imgUrl`) VALUES 
+(1,'Avatar','2010-05-15','szabad','https://m.media-amazon.com/images/M/MV5BZDA0OGQxNTItMDZkMC00N2UyLTg3MzMtYTJmNjg3Nzk5MzRiXkEyXkFqcGdeQXVyMjUzOTY1NTc@._V1_.jpg'),
+(2,'A Hangya és a Darázs: Kvantumánia','2023-05-02','kikülcsönzött','https://m.blog.hu/dv/dvdnews/image/antman_and_the_wasp_quantumania_p12.png'),
+(3,'Top Gun: Maverick','2022-10-05','selejtezett','https://media.port.hu/images/001/485/109.jpg'),
+(4,'Csizmás, a kandúr','2009-05-19','kikülcsönzött','https://mesekincstar.tv/wp-content/uploads/2015/12/csizmas-a-kandur-belyeg-mesekincstar.jpg'),
+(5,'Kipörgetve','2017-08-02','kikülcsönzött','https://img2.sfilm.hu/original/hfr44R6uJdYIVVZzjS7ob4zCf34.jpg'),
+(6,'Thor','2008-03-26','szabad','https://m.media-amazon.com/images/M/MV5BOGE4NzU1YTAtNzA3Mi00ZTA2LTg2YmYtMDJmMThiMjlkYjg2XkEyXkFqcGdeQXVyNTgzMDMzMTg@._V1_FMjpg_UX1000_.jpg'),
+(7,'Dolittle','2013-07-10','selejtezett','https://m.media-amazon.com/images/I/81TY+y57HeL._AC_UF894,1000_QL80_.jpg'),
+(8,'Bloodshot','2019-06-29','kikülcsönzött','https://m.media-amazon.com/images/M/MV5BOTE4NjY2ZmQtMTlmNC00MzllLWExNmItNTE5NjE4ZjM4MGVlXkEyXkFqcGdeQXVyMTA4NjE0NjEy._V1_.jpg'),
+(9,'Bad Boys','2016-02-20','szabad','https://m.media-amazon.com/images/M/MV5BMWU0MGYwZWQtMzcwYS00NWVhLTlkZTAtYWVjOTYwZTBhZTBiXkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_.jpg'),
+(10,'Jégkorszak','2009-04-22','selejtezett','https://image.tmdb.org/t/p/w500/xtbrVsVcIvsyTz3O031Vz9kcYX3.jpg'),
+(11,'Fekete Párduc','2012-08-15','szabad','https://media.port.hu/images/000/985/829.jpg'),
+(12,'Uncharted','2022-08-14','selejtezett','https://www.mafab.hu/static/2022/32/23/77273_1643840652.9283.jpg');
+
+kazatak:
+INSERT INTO `kazetak` (`id`,`title`,`date`,`status`,`imgUrl`) VALUES
+(1,'Top Gun','2005-05-10','selejtezett','https://m.media-amazon.com/images/I/71JXK7v7pvL._SL1500_.jpg'),
+(2,'Max','2009-10-06','szabad','https://m.media-amazon.com/images/M/MV5BMjA2Nzk0NzIyN15BMl5BanBnXkFtZTgwMjEyNTE5NDE@._V1_FMjpg_UX1000_.jpg'),
+(3,'Red','2002-06-19','2','https://m.media-amazon.com/images/M/MV5BMzg2Mjg1OTk0NF5BMl5BanBnXkFtZTcwMjQ4MTA3Mw@@._V1_.jpg'),
+(4,'A fantasztikus négyes','2004-09-25','selejtezett','https://www.mafab.hu/static/profiles/2014/293/03/17293_45.jpg'),
+(5,'A kém','2007-08-30','kikülcsönzött','https://media.port.hu/images/000/766/926.jpg'),
+(6,'Chappie','2001-12-05','szabad','https://m.media-amazon.com/images/M/MV5BMTUyNTI4NTIwNl5BMl5BanBnXkFtZTgwMjQ4MTI0NDE@._V1_FMjpg_UX1000_.jpg'),
+(7,'Pixel','2000-02-10','selejtezett','https://media.port.hu/images/000/757/812.jpg'),
+(8,'Black Adam','2010-07-15','kikülcsönzött','https://lsf.go.id/wp-content/uploads/2022/10/30.-Black-Adam_page-0001.jpg'),
+(9,'Jurassic World','2003-01-25','szabad','https://m.media-amazon.com/images/I/81bEk4cFbHL._SL1500_.jpg'),
+(10,'Csatahajó','2005-02-07','kikülcsönzött','https://www.mafab.hu/static/profiles/2014/293/14/56092_9.jpg'),
+(11,'Nagyfiúk','2006-03-18','szabad','https://www.mafab.hu/static/profiles/2014/293/10/43429_9.jpg'),
+(12,'Bosszúállók','2008-04-19','selejtezett','https://upload.wikimedia.org/wikipedia/hu/thumb/a/a9/Bossz%C3%BA%C3%A1ll%C3%B3k.jpg/250px-Bossz%C3%BA%C3%A1ll%C3%B3k.jpg');
+
+user:
+INSERT INTO `user`(`id`,`firstname`,`lastname`,`username`,`email`,`passwd`,`telszam`,`szemszam`,`lakcim`,`role`,`status`) VALUES
+(1,'admin','admin','admin','teszt@teszt.com','admin','06selejtezett0szabadkikülcsönzöttselejtezett4567','szabadkikülcsönzöttselejtezett456AB','szabadkikülcsönzöttselejtezett4 Teszt egy utca szabad','admin',1);
+
+{
+  "id" : 1,
+  "firstname" : "admin",
+  "lastname" : "admin",
+  "username" : "admin",
+  "email" : "teszt@teszt.com",
+  "passwd" : "admin",
+  "telszam" : "06selejtezett0szabadkikülcsönzöttselejtezett4567",
+  "szemszam" : "szabadkikülcsönzöttselejtezett456AB",
+  "lakcim" : "szabadkikülcsönzöttselejtezett4 Teszt egy utca szabad",
+  "role" : "admin",
+  "status" : 1
+}
+
+status: 1 -> true; 0 -> false
+
+allapot:
+INSERT INTO `allapot`(`id`,`status`) VALUES
+(1,'szabad'),
+(2,'kikülcsönzött'),
+(3,'selejtezett');
+
+kolcsonzottdvd:
+INSERT INTO `kolcsonzottdvd` (`id`,`dvdid`,`userid`) VALUES
+(1, 2, 2),
+(2, 4, 2),
+(3, 5, 6),
+(4, 8, 6);

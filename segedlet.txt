@@ -1,0 +1,4 @@
+    "id": 1,
+    "username": "teszt",
+    "email": "test@test.hu",
+    "passwd": "admin"

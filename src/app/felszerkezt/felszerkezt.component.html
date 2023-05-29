@@ -1,0 +1,43 @@
+<div class="row justify-content-md-center">
+    <div class="col-6">
+        <form [formGroup]="felszerkeztForm">
+            <div class="mb-3">
+                <label for="firstName" class="form-label"> Keresztnév </label>
+                <input type="text" class="form-control" id="firstName" formControlName="firstName">
+            </div>
+            <div class="mb-3">
+                <label for="lastName" class="form-label"> Vezetéknév </label>
+                <input type="text" class="form-control" id="lastName" formControlName="lastName">
+            </div>
+            <div class="mb-3">
+                <label for="username" class="form-label"> Felhasználónév </label>
+                <input type="text" class="form-control" id="username" formControlName="username">
+            </div>
+            <div class="mb-3">
+                <label for="email" class="form-label"> E-mail </label>
+                <input type="email" class="form-control" id="email" formControlName="email">
+            </div>
+            <!--
+            <div class="mb-3">
+                <label for="password" class="form-label"> Jelszó </label>
+                <input type="passwd" class="form-control" id="passwd" formControlName="passwd">
+            </div>
+            -->
+            <div class="mb-3">
+                <label for="telszam" class="form-label"> Telefonszám </label>
+                <input type="text" class="form-control" id="telszam" formControlName="telszam">
+            </div>
+            <div class="mb-3">
+                <label for="szemszam" class="form-label"> Személy igazolvány szám </label>
+                <input type="text" class="form-control" id="szemszam" formControlName="szemszam">
+            </div>
+            <div class="mb-3">
+                <label for="lakcim" class="form-label"> Lakcím </label>
+                <input type="text" class="form-control" id="lakcim" formControlName="lakcim">
+            </div>
+            <div class="text-end div-align">
+                <button class="btn btn-outline-primary" (click)="updateUser()"> Mentés </button>
+            </div>
+        </form>
+    </div>
+</div>
