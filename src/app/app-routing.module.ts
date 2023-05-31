@@ -11,6 +11,7 @@ import { SzerkeztComponent } from './szerkezt/szerkezt.component';
 import { FellistComponent } from './fellist/fellist.component';
 import { FelszerkeztComponent } from './felszerkezt/felszerkezt.component';
 import { FelkeresComponent } from './felkeres/felkeres.component';
+import { KeseslistComponent } from './keseslist/keseslist.component';
 
 const routes: Routes = [
   {
@@ -59,6 +60,10 @@ const routes: Routes = [
     path: 'felhasznalokeres',
     component : FelkeresComponent,
     canActivate: [ () => inject(HitelesitService).vendegAkadalyozasa() ]
+  },
+  {
+    path: 'keseklist',
+    component: KeseslistComponent
   }
 ];
 

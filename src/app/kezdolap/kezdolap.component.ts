@@ -16,7 +16,6 @@ export class KezdolapComponent implements OnInit
   dvd : DvdDTO[] = [];
   kazeta : KazetakDTO[] = [];
 
-
   constructor(
     public hitelesítService: HitelesitService, 
     private dvdService: DvdService, 

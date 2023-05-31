@@ -8,6 +8,7 @@ import { DvdService } from '../services/dvd.service';
 import { KazetakService } from '../services/kazetak.service';
 import { KolcsonottdvdService } from '../services/kolcsonottdvd.service';
 import { KolcsonzottkazetaService } from '../services/kolcsonzottkazeta.service';
+import { formatDate } from '@angular/common';
 
 @Component({
   selector: 'app-fellist',
@@ -24,7 +25,8 @@ export class FellistComponent implements OnInit
 
   dvdkolcsonzesForm = this.formBuilder.group({
     id: this.formBuilder.control(0),
-    dvdId: this.formBuilder.control(0)
+    dvdId: this.formBuilder.control(0),
+    varhatoVege: this.formBuilder.control( formatDate(new Date(), 'yyyy-MM-dd', 'en') )
   });
 
   kazetakolcsonzesForm = this.formBuilder.group({
@@ -45,13 +47,15 @@ export class FellistComponent implements OnInit
   kolcsonzottDvdForm = this.formBuilder.group({
     id: this.formBuilder.control(0),
     dvdid: this.formBuilder.control(0),
-    userid: this.formBuilder.control(0)
+    userid: this.formBuilder.control(0),
+    kolcsKezdet: this.formBuilder.control( formatDate(new Date(), 'yyyy-MM-dd', 'en') )
   });
 
   kolcsonzottKazetaForm = this.formBuilder.group({
     id: this.formBuilder.control(0),
     kazetaid: this.formBuilder.control(0),
-    userid: this.formBuilder.control(0)
+    userid: this.formBuilder.control(0),
+    kolcsKezdet: this.formBuilder.control( formatDate(new Date(), 'yyyy-MM-dd', 'en') )
   });
 
   userForm = this.formBuilder.group({});
@@ -150,7 +154,12 @@ export class FellistComponent implements OnInit
     kolcsdvd.userid = kId;
     kolcsdvd.dvdid = dvd.id;
 
-    this.kolcsonzottDvd.create(kolcsdvd).subscribe({
+    console.log('value');
+    console.log(this.kolcsonzottDvdForm.value);
+    console.log('kesz');
+    console.log(kolcsdvd);
+
+    this.kolcsonzottDvd.creatWithDate(kolcsdvd).subscribe({
       next: (k) => {
         console.log(k);
       },
@@ -182,7 +191,7 @@ export class FellistComponent implements OnInit
     kolcskazeta.userid = kId;
     kolcskazeta.kazetaid = kazeta.id;
 
-    this.kolcsonzottKazeta.create(kolcskazeta).subscribe({
+    this.kolcsonzottKazeta.creatWithDate(kolcskazeta).subscribe({
       next: (k) => {
         console.log(k);
       },

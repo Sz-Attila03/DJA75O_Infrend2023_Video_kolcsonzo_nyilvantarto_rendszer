@@ -33,10 +33,13 @@
           <a class="nav-link" routerLink="/termekform" routerLinkActive="kivalasztott" > Új termék felvétele </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" routerLink="/felhasznalok" routerLinkActive="kivalasztott" *ngIf="hit.isLoggedIn() && hit.isAdmin()"> Felhasználók </a>
+          <a class="nav-link" routerLink="/felhasznalok" routerLinkActive="kivalasztott" *ngIf="hit.isLoggedIn()"> Felhasználók </a>
         </li>
         <li class="nav-item">
           <a class="nav-link" routerLink="/felhasznalokeres" routerLinkActive="kivalasztott" > Felhasználó keresése </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/keseklist" routerLinkActive="kivalasztott" *ngIf="hit.isLoggedIn() && hit.isAdmin()"> Késések Listázása </a>
         </li>
       </ul>
     </div>

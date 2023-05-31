@@ -9,7 +9,7 @@ export class KolcsonottdvdService {
 
   constructor( private http: HttpClient ) { }
 
-  getAll()
+    getAll()
     {
         return this.http.get<KolcdonzottDvdDTO[]>('api/kolcsonzottdvd');
     }
@@ -37,6 +37,11 @@ export class KolcsonottdvdService {
     delete(id: number)
     {
         return this.http.delete('api/kolcsonzottdvd/' + id);
+    }
+
+    creatWithDate(movie: KolcdonzottDvdDTO)
+    {
+        return this.http.post<KolcdonzottDvdDTO>('api/kolcsonzottdvd/creatWithDate', movie);
     }
 
 }

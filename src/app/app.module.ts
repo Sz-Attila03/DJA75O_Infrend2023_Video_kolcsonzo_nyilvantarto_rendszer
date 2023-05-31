@@ -20,6 +20,7 @@ import { CommonModule } from '@angular/common';
 import { FelszerkeztComponent } from './felszerkezt/felszerkezt.component';
 import { FellistComponent } from './fellist/fellist.component';
 import { FelkeresComponent } from './felkeres/felkeres.component';
+import { KeseslistComponent } from './keseslist/keseslist.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { FelkeresComponent } from './felkeres/felkeres.component';
     SzerkeztComponent,
     FelszerkeztComponent,
     FellistComponent,
-    FelkeresComponent
+    FelkeresComponent,
+    KeseslistComponent
   ],
   imports: [
     BrowserModule,

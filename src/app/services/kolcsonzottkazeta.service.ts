@@ -38,4 +38,9 @@ export class KolcsonzottkazetaService {
     {
         return this.http.delete('api/kolcsonzottkazeta/' + id);
     }
+
+    creatWithDate(movie: KolcsonzottkazetaDTO)
+    {
+        return this.http.post<KolcsonzottkazetaDTO>('api/kolcsonzottkazeta/creatWithDate', movie);
+    }
 }

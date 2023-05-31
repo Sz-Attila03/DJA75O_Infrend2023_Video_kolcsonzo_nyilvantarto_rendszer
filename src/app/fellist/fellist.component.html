@@ -20,7 +20,7 @@
     </div>
 </div>
 
-<div class="row col-1 mb-5 div-align" *ngIf="dvdKolcsonzosSetVisible">
+<div class="row col-2 mb-5 div-align" *ngIf="dvdKolcsonzosSetVisible">
     Dvd id:
     <form [formGroup]="dvdkolcsonzesForm">
         <input type="number" class="form-control" id="dvdId" formControlName="dvdId">
@@ -29,7 +29,7 @@
     <button class="btn btn-sm btn-outline-danger" (click)="megse()"> Mégse </button>
 </div>
 
-<div class="row col-1 mb-5 div-align" *ngIf="kazetaKolcsonzosSetVisible">
+<div class="row col-2 mb-5 div-align" *ngIf="kazetaKolcsonzosSetVisible">
     Kazeta id:
     <form [formGroup]="kazetakolcsonzesForm">
         <input type="number" class="form-control" id="kazetaId" formControlName="kazetaId">

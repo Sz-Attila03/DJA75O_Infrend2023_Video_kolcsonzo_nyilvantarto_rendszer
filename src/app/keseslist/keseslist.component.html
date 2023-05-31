@@ -1,0 +1,149 @@
+<!--
+<div class="row mb-5">
+    <div class="col-12 div-align">
+        <button class="btn btn-danger me-3" (click)="setDvdVisible()"> DVD </button>
+        <button class="btn btn-danger" (click)="setKazetakVisible()"> Kazeták </button>
+    </div>
+</div>
+
+<div class="row justify-content-md-center mb-5" *ngIf="dvdVisible">
+    <div class="col-6">
+        <h4> <p style="text-align: center;"> <b> DVD </b> </p> </h4>
+            <table *ngFor="let d of kesetDvd">
+                <tr>
+                    <th>Azonosító: </th>
+                    <th> {{d.id}} </th>
+                </tr>
+                <tr>
+                    <th>Cim:</th>
+                    <th> {{d.title}} </th>
+                </tr>
+                <tr>
+                    <th>Felhasználónév:</th>
+                    <th> {{d.username}} </th>
+                </tr>
+                <tr>
+                    <th>Email:</th>
+                    <th> {{d.email}} </th>
+                </tr>
+                <tr>
+                    <th>Telefonszam:</th>
+                    <th> {{d.telszam}} </th>
+                </tr>
+                <tr>
+                    <th>Kolcsonzes kezdete:</th>
+                    <th> {{d.kolcsKezdet}} </th>
+                </tr>
+                <tr>
+                    <th>Keset napok száma:</th>
+                    <th> {{d.kesetnapok}} </th>
+                </tr>
+                <hr>
+            </table>
+    </div>
+</div>
+
+<div class="row justify-content-md-center mb-5" *ngIf="kazetaVisible">
+    <div class="col-6">
+        <h4> <p style="text-align: center;"> <b> Kazeták </b> </p> </h4>
+        <table *ngFor="let k of kesetKazeta">
+            <tr>
+                <th>Azonosító: </th>
+                <th> {{k.id}} </th>
+            </tr>
+            <tr>
+                <th>Cim:</th>
+                <th> {{k.title}} </th>
+            </tr>
+            <tr>
+                <th>Felhasználónév:</th>
+                <th> {{k.username}} </th>
+            </tr>
+            <tr>
+                <th>Email:</th>
+                <th> {{k.email}} </th>
+            </tr>
+            <tr>
+                <th>Telefonszam:</th>
+                <th> {{k.telszam}} </th>
+            </tr>
+            <tr>
+                <th>Kolcsonzes kezdete:</th>
+                <th> {{k.kolcsKezdet}} </th>
+            </tr>
+            <tr>
+                <th>Keset napok száma:</th>
+                <th> {{k.kesetnapok}} </th>
+            </tr>
+            <hr>
+        </table>
+    </div>
+</div>
+-->
+
+
+<!-- -->
+<br><br>
+
+<button class="btn btn-danger me-3" (click)="setIsDvd(true)"> DVD </button>
+<button class="btn btn-danger" (click)="setIsDvd(false)"> Kazeták </button>
+
+<br><br>
+
+Dvd:
+
+<br>
+
+<div class="row">
+    <table>
+        <tr>
+            <th>Azonosító: </th>
+            <th>Cim:</th>
+            <th>Felhasználónév:</th>
+            <th>Email:</th>
+            <th>Telefonszam:</th>
+            <th>Kolcsonzes kezdete:</th>
+            <th>Keset napok száma:</th>
+        </tr>
+        <tr *ngFor="let d of kesetDvd">
+            <th> {{d.id}} </th>
+            <th> {{d.title}} </th>
+            <th> {{d.username}} </th>
+            <th> {{d.email}} </th>
+            <th> {{d.telszam}} </th>
+            <th> {{d.kolcsKezdet}} </th>
+            <th> {{d.kesetnapok}} </th>
+
+        </tr>
+    </table>
+</div>
+
+<br><br><br>
+
+Kazeta:
+
+<br>
+
+<div class="row">
+    <table>
+        <tr>
+            <th>Azonosító: </th>
+            <th>Cim:</th>
+            <th>Felhasználónév:</th>
+            <th>Email:</th>
+            <th>Telefonszam:</th>
+            <th>Kolcsonzes kezdete:</th>
+            <th>Keset napok száma:</th>
+        </tr>
+        <tr *ngFor="let k of kesetKazeta">
+            <th> {{k.id}} </th>
+            <th> {{k.title}} </th>
+            <th> {{k.username}} </th>
+            <th> {{k.email}} </th>
+            <th> {{k.telszam}} </th>
+            <th> {{k.kolcsKezdet}} </th>
+            <th> {{k.kesetnapok}} </th>
+        </tr>
+    </table>
+</div>
+<!-- -->
